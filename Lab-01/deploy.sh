@@ -1,9 +1,9 @@
 
-echo "Part 1: Deploying VM and KV with MI !"
+echo "Part 1: Deploying VM and KeyVault"
 
 # Variables
-prefix="tspe"
-publicSshKey="<Place your public SSH key here>"
+prefix="<Place Your Prefix Here>"
+publicSshKey="<Place Your Public SSH Key Here>"
 vaultName="${prefix}-kv"
 
 rgName="${prefix}-rg"

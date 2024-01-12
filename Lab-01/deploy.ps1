@@ -1,7 +1,7 @@
 Write-Host "Part 1: Deploying VM and KV with MI !"
 
 # Variables
-$prefix = "<YOUR PREFIX>"
+$prefix="<Place Your Prefix Here>"
 $publicSshKey = "<Place Your Public SSH Key Here>"
 
 $rgName = "${prefix}-rg"
@@ -22,7 +22,7 @@ az deployment group create `
   --parameters `
     prefix=$prefix `
     userPrincipalId=$userPrincipalId `
-    vmAdminPasswordOrKey=$publicSshKey
+    vmAdminPasswordOrKey="$publicSshKey"
 
 echo "Set simple Secret on the VM"
 az keyvault secret set --vault-name $vaultName --name "scecret" --value "12345678"

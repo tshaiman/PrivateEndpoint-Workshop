@@ -14,17 +14,17 @@ The goal is to use this topology to learn how Private Endpoint works.
 
 ## Steps:
 
-0. Ensure you are Az Login on the Video Indexer Subscription : 
+0. Ensure you are Az-Logged In to your Subscription : 
 
 ```
 az login --used-device-code
-az account set --subscription VideoIndexer-Dev
+az account set --subscription <Your_Subscription_ID>
 ```
 
 or
 
 ```powershell
-Connect-AzAccount -useDeviceAuthentication -subscriptionId 24237b72-8546-4da5-b204-8c3cb76dd930
+Connect-AzAccount -useDeviceAuthentication -subscriptionId <Your_Subscription_ID>
 ```
 
 1. Open the lab Lab1 in Visual Studio Code .
