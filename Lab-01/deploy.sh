@@ -28,4 +28,4 @@ az deployment group create \
     vmAdminPasswordOrKey="$publicSshKey"
 
 echo "Set simple Secret on the VM"
-az keyvault secret set --vault-name $vaultName --name "scecret" --value "12345678"
+az keyvault secret set --vault-name $vaultName --name "secret" --value "12345678"
