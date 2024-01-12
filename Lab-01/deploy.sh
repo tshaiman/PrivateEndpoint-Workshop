@@ -3,7 +3,10 @@ echo "Part 1: Deploying VM and KeyVault"
 
 # Variables
 prefix="<Place Your Prefix Here>"
-publicSshKey="<Place Your Public SSH Key Here>"
+
+# create dummy ssh key and use it as password
+ssh-keygen -t rsa -b 4096 -f ./id_rsa -q -N ""
+publicSshKey=$(cat ./id_rsa.pub)
 vaultName="${prefix}-kv"
 
 rgName="${prefix}-rg"

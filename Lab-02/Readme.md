@@ -11,8 +11,14 @@ most of this lab will be performed from the Azure Portal .
 ## Steps:
 
 1. Go to the network tab of the KV and select the Private Endpoint Tab.
+
+![net1](./p1.png)
+
 2. Create new Private Endpoint pointing from your created VNET from Lab01 to the KV.
+![net2](./p2.png)
+![net2](./p3.png)
 3. Accept the default setting when asked to create Private DNS Zone
+![net2](./p4.png)
 4. Wait For the resources to be provisioned.
 
 ## Accessing the KV from within the Vnet
