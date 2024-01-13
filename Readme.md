@@ -4,6 +4,7 @@
 
 1. Azure CLI 
 2. Visual Studio Code with Bicep plugin
+3. Azure VPN to SSH into a VM
 
 
 ## Table of Contents
