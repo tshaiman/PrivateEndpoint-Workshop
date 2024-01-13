@@ -31,9 +31,6 @@ Connect-AzAccount -useDeviceAuthentication -subscriptionId <Your_Subscription_ID
 2. Open deploy.sh ( or deploy.ps1) and add the following varaibles :
 
 * Add Prefix on line 6 , e.g : _'myname'_
-* Copy a public SSH Key from your ~/.ssh/id_rsa.pub into line 7
-
-**_Note:_** It is Legal to copy Public SSH Key into scripts. this is how it is done in GitHub and Azure Dev Ops SSH Access.
 
 3. Run the script by using the following command : 
 
@@ -52,8 +49,14 @@ or
 
 ## Understanding the connectivity to the KV
 
-In Order to understand what is happening on the network level at this stage , we shall SSH into the vm 
-and run the following command 
+In Order to understand what is happening on the network level at this stage , we shall SSH into the VM first 
+
+```sh
+ az ssh vm --resource-group <your_rg> --vm-name <your_vm> --subscription <your_subscription>
+```
+
+
+from within the VM, run the following command 
 
 ```sh
  nslookup <your_KV_NAME>.vault.azure.net

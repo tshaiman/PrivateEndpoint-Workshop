@@ -204,6 +204,18 @@ resource vmExtension 'Microsoft.Compute/virtualMachines/extensions@2021-07-01' =
   }
 }
 
+resource vmExtensionAAD 'Microsoft.Compute/virtualMachines/extensions@2021-07-01' = {
+  parent: virtualMachine
+  name: 'AADSSHLoginForLinux'
+  location: location
+  properties: {
+    publisher: 'Microsoft.Azure.ActiveDirectory'
+    type: 'AADSSHLoginForLinux'
+    typeHandlerVersion: '1.0'
+    autoUpgradeMinorVersion: true
+  }
+}
+
 resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
   name: vaultName
   location: location
