@@ -244,3 +244,19 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
     ]
   }
 }
+
+resource virtualMachineUserLogin 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
+  name: '7f951dda-4ed3-4680-a7ca-43fe172d538d'
+  scope: subscription()
+}
+
+//Grant Virtual Machine User Login to the System Assigned Identity so we can 'az login' to the VM
+resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
+  name: guid(resourceGroup().id, virtualMachine.name, 'virtualMachineUserLogin')
+  scope: virtualMachine 
+  properties: {
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', virtualMachineUserLogin.name)
+    principalId: virtualMachine.identity.principalId
+    principalType: 'ServicePrincipal'
+  }
+}
