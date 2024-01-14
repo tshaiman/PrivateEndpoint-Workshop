@@ -37,7 +37,7 @@ can you tell the difference ?
 2. Run the following command to retreive the value of the Secret created on step 1 : 
 
 ```sh
- az keyvault secret show --vault-name $vaultName --name "scecret"
+ az keyvault secret show --vault-name $vaultName --name "secret"
 ```
 
 notice that at this point the KV API is accessible from the public internet as well as from the VNEt using Private Endpoint

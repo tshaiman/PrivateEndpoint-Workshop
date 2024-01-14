@@ -2,7 +2,11 @@ Write-Host "Part 1: Deploying VM and KV with MI !"
 
 # Variables
 $prefix="<Place Your Prefix Here>"
-$publicSshKey = "<Place Your Public SSH Key Here>"
+
+# create dummy ssh key and use it as password
+ssh-keygen -t rsa -b 4096 -f ./id_rsa -q -N ""
+$publicSshKey = Get-Content ./id_rsa.pub
+$vaultName = "${prefix}-kv"
 
 $rgName = "${prefix}-rg"
 $location = "eastus"
